@@ -1,0 +1,53 @@
+<?php
+    function queen_attack_menu() {
+        $items = array();
+        $items['queen_attack'] = array(
+            'title' => 'Queens Attack',
+            'page callback' => 'queen_attack',
+            'page arguments' => array('drupal_get_form'),
+            'access callback' => TRUE,
+            'type' => MENU_NORMAL_ITEM,
+        );
+        $items['queen_success'] = array(
+            'title' => 'Queen Attack',
+            'page callback' => 'queen_attack_success',
+            'access callback' => TRUE,
+            'type' => MENU_CALLBACK,
+        );
+        return $items;
+    }
+
+//     function queen_attack_form() {
+//         $form['queens_position'] = array(
+//             '#title' = "Starting Position",
+//             '#type' = "textfield",
+//             "#description" = t('Enter the queens position ex. A7'),
+//         );
+//         $form['queens_attack'] =array(
+//             '#title' = "Attack Position",
+//             '#type' = "textfield",
+//             '#description' = t('Enter the position you would like to attack ex. B5'),
+//         );
+//         $form['submit'] = array(
+//             '#type' => 'submit',
+//             '#value' => 'Attack!',
+//         );
+//     }
+//
+//     function queen_attack_form_submit($form, &$form_state) {
+//         $input_position = $form_state['value']['queen_position'];
+//         $input_attack = $form_state['value']['queen_attack'];
+//         $position_values = array();
+//         $attack_values = array();
+//         $position_values = str_split($input_position);
+//         $attack_values = str_split($input_attack);
+//
+//         $points = array("A", "B", "C", "D", "E", "F", "G", "H");
+//         $attack_x = array_search($attack_values[0], $points) + 1;
+//         $attack_y = $attack_values[1];
+//
+//         $form_state['redirect'] = 'queen_success';
+//     }
+// function queen_attack_success(){
+//     return "$attack_x $attack_y";
+// }
