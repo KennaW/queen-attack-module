@@ -1,0 +1,5 @@
+name = Queen Attack
+description = Shows the moves where the queen can attack.
+package = Brett and Kenna's Creations
+core = 7.x
+files[] = queen_attack.module
